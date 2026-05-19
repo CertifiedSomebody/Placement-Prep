@@ -1,7 +1,10 @@
 import customtkinter as ctk
 
 from logic.quiz_manager import QuizManager
+
 from ui.home_screen import HomeScreen
+from ui.quiz_screen import QuizScreen
+from ui.result_screen import ResultScreen
 
 
 # =========================================
@@ -24,21 +27,64 @@ quiz = QuizManager()
 
 
 # =========================================
-# Temporary Function
+# Functions
 # =========================================
 def start_category(category_name):
 
     quiz.load_category(category_name)
 
-    print(f"Selected Category: {category_name}")
+    home_screen.pack_forget()
+
+    quiz_screen.pack(
+        fill="both",
+        expand=True
+    )
+
+    quiz_screen.load_question()
+
+
+def show_result():
+
+    quiz_screen.pack_forget()
+
+    result_screen.update_score()
+
+    result_screen.pack(
+        fill="both",
+        expand=True
+    )
+
+
+def restart_quiz():
+
+    quiz.restart_quiz()
+
+    result_screen.pack_forget()
+
+    home_screen.pack(
+        fill="both",
+        expand=True
+    )
 
 
 # =========================================
-# Home Screen
+# Screens
 # =========================================
 home_screen = HomeScreen(
     app,
     start_category
+)
+
+quiz_screen = QuizScreen(
+    app,
+    quiz,
+    show_result
+)
+
+result_screen = ResultScreen(
+    app,
+    quiz,
+    restart_quiz
 )
 
 

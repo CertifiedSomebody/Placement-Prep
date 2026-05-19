@@ -1,23 +1,454 @@
 [
     {
         "question": "Find the odd one out: Apple, Banana, Carrot, Mango",
-        "options": [
-            "Apple",
-            "Banana",
-            "Carrot",
-            "Mango"
-        ],
+        "options": ["Apple", "Banana", "Carrot", "Mango"],
         "answer": "Carrot"
+    },
+    {
+        "question": "If ALL = 25, BALL = ?",
+        "options": ["27", "26", "29", "30"],
+        "answer": "27"
+    },
+    {
+        "question": "Find the next number: 2, 4, 6, 8, ?",
+        "options": ["9", "10", "11", "12"],
+        "answer": "10"
+    },
+    {
+        "question": "Find the odd one out: Dog, Cat, Lion, Cow",
+        "options": ["Dog", "Cat", "Lion", "Cow"],
+        "answer": "Lion"
+    },
+    {
+        "question": "If CAT = 24, then DOG = ?",
+        "options": ["26", "27", "28", "29"],
+        "answer": "26"
+    },
+    {
+        "question": "Complete the series: A, C, E, G, ?",
+        "options": ["H", "I", "J", "K"],
+        "answer": "I"
+    },
+    {
+        "question": "Find the odd one out: 2, 3, 5, 9, 11",
+        "options": ["2", "3", "5", "9", "11"],
+        "answer": "9"
+    },
+    {
+        "question": "If PEN = 35, then TEN = ?",
+        "options": ["40", "41", "42", "43"],
+        "answer": "42"
+    },
+    {
+        "question": "Find next number: 1, 4, 9, 16, ?",
+        "options": ["20", "24", "25", "30"],
+        "answer": "25"
+    },
+    {
+        "question": "If BOOK = 43, then NOTE = ?",
+        "options": ["52", "54", "56", "58"],
+        "answer": "54"
+    },
+    {
+        "question": "Find odd one out: Circle, Triangle, Square, Cube",
+        "options": ["Circle", "Triangle", "Square", "Cube"],
+        "answer": "Cube"
+    },
+    {
+        "question": "Complete series: 5, 10, 15, 20, ?",
+        "options": ["22", "24", "25", "30"],
+        "answer": "25"
+    },
+    {
+        "question": "If SUN = 54, then RUN = ?",
+        "options": ["48", "49", "50", "51"],
+        "answer": "50"
+    },
+    {
+        "question": "Find next number: 3, 6, 12, 24, ?",
+        "options": ["36", "42", "48", "52"],
+        "answer": "48"
+    },
+    {
+        "question": "Find odd one out: Red, Blue, Green, Circle",
+        "options": ["Red", "Blue", "Green", "Circle"],
+        "answer": "Circle"
+    },
+    {
+        "question": "If APPLE = 50, then GRAPE = ?",
+        "options": ["55", "57", "58", "60"],
+        "answer": "57"
+    },
+    {
+        "question": "Complete series: 10, 20, 30, 40, ?",
+        "options": ["45", "50", "55", "60"],
+        "answer": "50"
+    },
+    {
+        "question": "Find next number: 7, 14, 21, 28, ?",
+        "options": ["30", "32", "35", "36"],
+        "answer": "35"
+    },
+    {
+        "question": "If CODE = 26, then NODE = ?",
+        "options": ["30", "32", "34", "36"],
+        "answer": "34"
+    },
+    {
+        "question": "Find odd one out: Chair, Table, Bed, Car",
+        "options": ["Chair", "Table", "Bed", "Car"],
+        "answer": "Car"
+    },
+    {
+        "question": "Complete series: 1, 3, 6, 10, ?",
+        "options": ["12", "14", "15", "16"],
+        "answer": "15"
+    },
+    {
+        "question": "If BAT = 24, then HAT = ?",
+        "options": ["30", "32", "34", "36"],
+        "answer": "34"
+    },
+    {
+        "question": "Find next number: 100, 90, 80, 70, ?",
+        "options": ["60", "65", "55", "50"],
+        "answer": "60"
+    },
+    {
+        "question": "Find odd one out: Monday, Tuesday, January, Wednesday",
+        "options": ["Monday", "Tuesday", "January", "Wednesday"],
+        "answer": "January"
+    },
+    {
+        "question": "If KING = 49, then QUEEN = ?",
+        "options": ["60", "62", "64", "66"],
+        "answer": "64"
+    },
+    {
+        "question": "Complete series: 2, 5, 8, 11, ?",
+        "options": ["12", "13", "14", "15"],
+        "answer": "14"
+    },
+    {
+        "question": "Find next number: 11, 22, 33, 44, ?",
+        "options": ["50", "55", "60", "66"],
+        "answer": "55"
+    },
+    {
+        "question": "If NOTE = 52, then TONE = ?",
+        "options": ["52", "54", "56", "58"],
+        "answer": "52"
+    },
+    {
+        "question": "Find odd one out: 1, 4, 9, 16, 18",
+        "options": ["1", "4", "9", "16", "18"],
+        "answer": "18"
+    },
+    {
+        "question": "Complete series: 9, 18, 27, 36, ?",
+        "options": ["40", "42", "45", "48"],
+        "answer": "45"
     },
 
     {
-        "question": "If ALL = 25, BALL = ?",
-        "options": [
-            "27",
-            "26",
-            "29",
-            "30"
-        ],
-        "answer": "27"
+        "question": "If A = 1, B = 2, ..., Z = 26, what is the value of WORD?",
+        "options": ["60", "61", "62", "63"],
+        "answer": "61"
+    },
+    {
+        "question": "Find the odd one out: 8, 27, 64, 125, 200",
+        "options": ["8", "27", "64", "125", "200"],
+        "answer": "200"
+    },
+    {
+        "question": "If DOG = 26, CAT = 24, then RAT = ?",
+        "options": ["38", "39", "40", "41"],
+        "answer": "39"
+    },
+    {
+        "question": "Find next number: 2, 6, 12, 20, 30, ?",
+        "options": ["40", "41", "42", "44"],
+        "answer": "42"
+    },
+    {
+        "question": "If FLOWER = 93, then GARDEN = ?",
+        "options": ["60", "62", "64", "66"],
+        "answer": "64"
+    },
+    {
+        "question": "Find odd one out: Triangle, Square, Rectangle, Sphere",
+        "options": ["Triangle", "Square", "Rectangle", "Sphere"],
+        "answer": "Sphere"
+    },
+    {
+        "question": "Complete series: 1, 4, 9, 16, 25, ?",
+        "options": ["30", "35", "36", "40"],
+        "answer": "36"
+    },
+    {
+        "question": "If TRAIN = 70, then BUS = ?",
+        "options": ["42", "43", "44", "45"],
+        "answer": "44"
+    },
+    {
+        "question": "Find next number: 3, 7, 13, 21, 31, ?",
+        "options": ["41", "43", "45", "47"],
+        "answer": "43"
+    },
+    {
+        "question": "If CODE = 26, then DECODE = ?",
+        "options": ["50", "52", "54", "56"],
+        "answer": "52"
+    },
+    {
+        "question": "Find odd one out: Mercury, Venus, Earth, Moon",
+        "options": ["Mercury", "Venus", "Earth", "Moon"],
+        "answer": "Moon"
+    },
+    {
+        "question": "Complete series: 5, 11, 17, 23, 29, ?",
+        "options": ["33", "35", "37", "39"],
+        "answer": "35"
+    },
+    {
+        "question": "If BAT = 24, then CAT = ?",
+        "options": ["24", "26", "28", "30"],
+        "answer": "26"
+    },
+    {
+        "question": "Find next number: 10, 21, 32, 43, ?",
+        "options": ["52", "54", "55", "56"],
+        "answer": "54"
+    },
+    {
+        "question": "If SUN = 54, then MOON = ?",
+        "options": ["60", "62", "64", "66"],
+        "answer": "62"
+    },
+    {
+        "question": "Find odd one out: Apple, Orange, Mango, Potato",
+        "options": ["Apple", "Orange", "Mango", "Potato"],
+        "answer": "Potato"
+    },
+    {
+        "question": "Complete series: 2, 5, 10, 17, 26, ?",
+        "options": ["35", "36", "37", "38"],
+        "answer": "37"
+    },
+    {
+        "question": "If PEN = 35, then PENCIL = ?",
+        "options": ["59", "61", "63", "65"],
+        "answer": "63"
+    },
+    {
+        "question": "Find next number: 1, 8, 27, 64, ?",
+        "options": ["100", "121", "125", "128"],
+        "answer": "125"
+    },
+    {
+        "question": "If NOTE = 52, then TONE = ?",
+        "options": ["52", "54", "56", "58"],
+        "answer": "52"
+    },
+    {
+        "question": "Find odd one out: Monday, Tuesday, Friday, January",
+        "options": ["Monday", "Tuesday", "Friday", "January"],
+        "answer": "January"
+    },
+    {
+        "question": "Complete series: 4, 9, 16, 25, 36, ?",
+        "options": ["40", "42", "49", "50"],
+        "answer": "49"
+    },
+    {
+        "question": "If KING = 49, then QUEEN = ?",
+        "options": ["64", "66", "68", "70"],
+        "answer": "64"
+    },
+    {
+        "question": "Find next number: 6, 13, 21, 30, 40, ?",
+        "options": ["50", "51", "52", "53"],
+        "answer": "51"
+    },
+    {
+        "question": "If EARTH = 40, then MARS = ?",
+        "options": ["45", "47", "48", "50"],
+        "answer": "47"
+    },
+    {
+        "question": "Find odd one out: Car, Bus, Train, Bicycle, Aeroplane",
+        "options": ["Car", "Bus", "Train", "Aeroplane"],
+        "answer": "Train"
+    },
+    {
+        "question": "Complete series: 11, 22, 33, 44, 55, ?",
+        "options": ["60", "66", "70", "72"],
+        "answer": "66"
+    },
+    {
+        "question": "If LOCK = 43, then KEY = ?",
+        "options": ["35", "37", "39", "41"],
+        "answer": "39"
+    },
+    {
+        "question": "Find next number: 9, 18, 27, 36, 45, ?",
+        "options": ["50", "54", "56", "60"],
+        "answer": "54"
+    },
+    {
+        "question": "If WATER = 72, then FIRE = ?",
+        "options": ["36", "38", "40", "42"],
+        "answer": "38"
+    },
+
+    {
+        "question": "If A = 1, Z = 26, what is the value of BACKWARD?",
+        "options": ["63", "64", "65", "66"],
+        "answer": "65"
+    },
+    {
+        "question": "Find the odd one out: 121, 144, 169, 196, 225, 250",
+        "options": ["121", "144", "169", "196", "225", "250"],
+        "answer": "250"
+    },
+    {
+        "question": "If DOG = 26 and GOD = 26, then CAT = ?",
+        "options": ["24", "25", "26", "27"],
+        "answer": "24"
+    },
+    {
+        "question": "Find next number: 1, 3, 6, 10, 15, ?",
+        "options": ["20", "21", "22", "23"],
+        "answer": "21"
+    },
+    {
+        "question": "If FLOWER = 93, then GARDEN = ?",
+        "options": ["60", "62", "64", "66"],
+        "answer": "64"
+    },
+    {
+        "question": "Find odd one out: 2, 6, 12, 20, 30, 42",
+        "options": ["2", "6", "12", "20", "30", "42"],
+        "answer": "20"
+    },
+    {
+        "question": "If TRAIN = 70, then PLANE = ?",
+        "options": ["45", "46", "47", "48"],
+        "answer": "46"
+    },
+    {
+        "question": "Complete series: 2, 6, 12, 20, 30, ?",
+        "options": ["40", "41", "42", "44"],
+        "answer": "42"
+    },
+    {
+        "question": "If APPLE = 50, then ORANGE = ?",
+        "options": ["69", "71", "73", "75"],
+        "answer": "73"
+    },
+    {
+        "question": "Find next number: 3, 10, 21, 36, 55, ?",
+        "options": ["70", "71", "72", "73"],
+        "answer": "72"
+    },
+    {
+        "question": "If CODE = 26, then DECODER = ?",
+        "options": ["54", "56", "58", "60"],
+        "answer": "56"
+    },
+    {
+        "question": "Find odd one out: Square, Circle, Triangle, Cube",
+        "options": ["Square", "Circle", "Triangle", "Cube"],
+        "answer": "Cube"
+    },
+    {
+        "question": "Complete series: 5, 11, 19, 29, 41, ?",
+        "options": ["53", "55", "57", "59"],
+        "answer": "55"
+    },
+    {
+        "question": "If BAT = 24, then TABLE = ?",
+        "options": ["42", "44", "46", "48"],
+        "answer": "46"
+    },
+    {
+        "question": "Find next number: 4, 9, 16, 25, 36, ?",
+        "options": ["42", "45", "49", "50"],
+        "answer": "49"
+    },
+    {
+        "question": "If SUN = 54, then SHINE = ?",
+        "options": ["64", "66", "68", "70"],
+        "answer": "66"
+    },
+    {
+        "question": "Find odd one out: Mercury, Venus, Earth, Pluto",
+        "options": ["Mercury", "Venus", "Earth", "Pluto"],
+        "answer": "Pluto"
+    },
+    {
+        "question": "Complete series: 1, 4, 9, 16, 25, 36, ?",
+        "options": ["40", "45", "49", "50"],
+        "answer": "49"
+    },
+    {
+        "question": "If PEN = 35, then PAPER = ?",
+        "options": ["50", "52", "54", "56"],
+        "answer": "54"
+    },
+    {
+        "question": "Find next number: 2, 5, 10, 17, 26, 37, ?",
+        "options": ["48", "49", "50", "51"],
+        "answer": "50"
+    },
+    {
+        "question": "If KING = 49, then QUEEN = ?",
+        "options": ["64", "66", "68", "70"],
+        "answer": "64"
+    },
+    {
+        "question": "Find odd one out: Monday, Tuesday, Wednesday, February",
+        "options": ["Monday", "Tuesday", "Wednesday", "February"],
+        "answer": "February"
+    },
+    {
+        "question": "Complete series: 11, 22, 33, 44, 55, 66, ?",
+        "options": ["72", "77", "80", "88"],
+        "answer": "77"
+    },
+    {
+        "question": "If LOCK = 43, then UNLOCK = ?",
+        "options": ["65", "67", "69", "71"],
+        "answer": "67"
+    },
+    {
+        "question": "Find next number: 9, 18, 27, 36, 45, 54, ?",
+        "options": ["60", "62", "63", "64"],
+        "answer": "63"
+    },
+    {
+        "question": "If FIRE = 38, then WATER = ?",
+        "options": ["72", "74", "76", "78"],
+        "answer": "76"
+    },
+    {
+        "question": "Find odd one out: Car, Bus, Train, Road",
+        "options": ["Car", "Bus", "Train", "Road"],
+        "answer": "Road"
+    },
+    {
+        "question": "Complete series: 6, 13, 21, 30, 40, 51, ?",
+        "options": ["62", "63", "64", "65"],
+        "answer": "63"
+    },
+    {
+        "question": "If NOTE = 52, then NOTEBOOK = ?",
+        "options": ["72", "74", "76", "78"],
+        "answer": "76"
+    },
+    {
+        "question": "Find next number: 1, 8, 27, 64, 125, ?",
+        "options": ["216", "225", "240", "250"],
+        "answer": "216"
     }
 ]

@@ -1,23 +1,464 @@
 [
     {
         "question": "Which language is used for Android Development?",
-        "options": [
-            "Python",
-            "Java",
-            "Swift",
-            "PHP"
-        ],
+        "options": ["Python", "Java", "Swift", "PHP"],
         "answer": "Java"
+    },
+    {
+        "question": "What does CPU stand for?",
+        "options": ["Central Process Unit", "Central Processing Unit", "Computer Personal Unit", "Central Processor Utility"],
+        "answer": "Central Processing Unit"
+    },
+    {
+        "question": "Which of the following is a programming language?",
+        "options": ["HTML", "CSS", "Python", "XML"],
+        "answer": "Python"
+    },
+    {
+        "question": "Which symbol is used for comments in Python?",
+        "options": ["//", "#", "/* */", "--"],
+        "answer": "#"
+    },
+    {
+        "question": "Which keyword is used to define a function in Python?",
+        "options": ["func", "define", "def", "function"],
+        "answer": "def"
+    },
+    {
+        "question": "What is the output of 2 + 3 * 2?",
+        "options": ["10", "8", "7", "12"],
+        "answer": "8"
+    },
+    {
+        "question": "Which data type is used for True/False values?",
+        "options": ["int", "float", "bool", "char"],
+        "answer": "bool"
+    },
+    {
+        "question": "Which operator is used for assignment?",
+        "options": ["==", "=", "=>", ":"],
+        "answer": "="
+    },
+    {
+        "question": "Which one is a loop in Python?",
+        "options": ["repeat", "for", "loop", "iterate"],
+        "answer": "for"
+    },
+    {
+        "question": "Which keyword is used to exit a loop?",
+        "options": ["stop", "break", "exit", "return"],
+        "answer": "break"
+    },
+    {
+        "question": "What is the output of len('hello')?",
+        "options": ["4", "5", "6", "7"],
+        "answer": "5"
+    },
+    {
+        "question": "Which of these is a valid variable name?",
+        "options": ["1name", "name_1", "name-1", "name 1"],
+        "answer": "name_1"
+    },
+    {
+        "question": "Which keyword is used for conditional statements?",
+        "options": ["for", "if", "loop", "case"],
+        "answer": "if"
+    },
+    {
+        "question": "What is used to store multiple values in Python?",
+        "options": ["array", "list", "tuple", "all of these"],
+        "answer": "all of these"
+    },
+    {
+        "question": "Which symbol is used for division?",
+        "options": ["%", "/", "*", "//"],
+        "answer": "/"
+    },
+    {
+        "question": "What is the output of 10 // 3?",
+        "options": ["3.33", "3", "4", "2"],
+        "answer": "3"
+    },
+    {
+        "question": "Which of the following is NOT a programming language?",
+        "options": ["Python", "Java", "HTML", "C++"],
+        "answer": "HTML"
+    },
+    {
+        "question": "Which function is used to print output in Python?",
+        "options": ["echo()", "print()", "write()", "output()"],
+        "answer": "print()"
+    },
+    {
+        "question": "What is the output of 5 == 5?",
+        "options": ["True", "False", "0", "1"],
+        "answer": "True"
+    },
+    {
+        "question": "Which keyword is used to define a class in Python?",
+        "options": ["class", "object", "def", "struct"],
+        "answer": "class"
+    },
+    {
+        "question": "What does RAM stand for?",
+        "options": ["Random Access Memory", "Read Access Memory", "Run Access Memory", "Real Active Memory"],
+        "answer": "Random Access Memory"
+    },
+    {
+        "question": "Which of these is a web technology?",
+        "options": ["HTML", "Python", "C++", "Java"],
+        "answer": "HTML"
+    },
+    {
+        "question": "What is the extension of Python files?",
+        "options": [".py", ".java", ".cpp", ".pt"],
+        "answer": ".py"
+    },
+    {
+        "question": "Which symbol is used for AND operator in Python?",
+        "options": ["&&", "and", "&", "AND"],
+        "answer": "and"
+    },
+    {
+        "question": "What is the output of 2 ** 3?",
+        "options": ["6", "8", "9", "5"],
+        "answer": "8"
+    },
+    {
+        "question": "Which of these is used for input in Python?",
+        "options": ["scan()", "input()", "get()", "read()"],
+        "answer": "input()"
+    },
+    {
+        "question": "Which loop runs at least once?",
+        "options": ["for", "while", "do-while", "none"],
+        "answer": "do-while"
+    },
+    {
+        "question": "Which of these is a database?",
+        "options": ["MySQL", "HTML", "CSS", "HTTP"],
+        "answer": "MySQL"
+    },
+    {
+        "question": "Which is used for version control?",
+        "options": ["Git", "Python", "Java", "SQL"],
+        "answer": "Git"
+    },
+    {
+        "question": "What is 0 in Boolean?",
+        "options": ["True", "False", "None", "Error"],
+        "answer": "False"
     },
 
     {
-        "question": "What does CPU stand for?",
+        "question": "What is the output of: print(2 * 3 ** 2)?",
+        "options": ["36", "18", "12", "9"],
+        "answer": "18"
+    },
+    {
+        "question": "Which data structure uses FIFO?",
+        "options": ["Stack", "Queue", "Tree", "Graph"],
+        "answer": "Queue"
+    },
+    {
+        "question": "What will be output of: print(type([]))?",
+        "options": ["list", "tuple", "dict", "array"],
+        "answer": "list"
+    },
+    {
+        "question": "Which keyword is used to handle exceptions in Python?",
+        "options": ["catch", "except", "error", "tryonly"],
+        "answer": "except"
+    },
+    {
+        "question": "What is the output of: len([1,2,3,4])?",
+        "options": ["3", "4", "5", "Error"],
+        "answer": "4"
+    },
+    {
+        "question": "Which sorting algorithm has average O(n log n)?",
+        "options": ["Bubble Sort", "Selection Sort", "Merge Sort", "Insertion Sort"],
+        "answer": "Merge Sort"
+    },
+    {
+        "question": "What is the output of: print(10/2)",
+        "options": ["5", "5.0", "4", "2"],
+        "answer": "5.0"
+    },
+    {
+        "question": "Which symbol is used for OR in Python?",
+        "options": ["||", "or", "&", "OR"],
+        "answer": "or"
+    },
+    {
+        "question": "Which data type is immutable?",
+        "options": ["list", "dictionary", "tuple", "set"],
+        "answer": "tuple"
+    },
+    {
+        "question": "What is the output of: print(3 == '3')?",
+        "options": ["True", "False", "Error", "None"],
+        "answer": "False"
+    },
+    {
+        "question": "Which traversal uses LIFO?",
+        "options": ["Queue", "Stack", "Graph", "Array"],
+        "answer": "Stack"
+    },
+    {
+        "question": "What is the output of: print(5//2)?",
+        "options": ["2.5", "2", "3", "Error"],
+        "answer": "2"
+    },
+    {
+        "question": "Which keyword is used to create generator?",
+        "options": ["yield", "return", "gen", "iterate"],
+        "answer": "yield"
+    },
+    {
+        "question": "What does SQL stand for?",
+        "options": ["Structured Query Language", "Simple Query Language", "Sequential Query Logic", "System Query Language"],
+        "answer": "Structured Query Language"
+    },
+    {
+        "question": "What is time complexity of binary search?",
+        "options": ["O(n)", "O(log n)", "O(n log n)", "O(1)"],
+        "answer": "O(log n)"
+    },
+    {
+        "question": "Which keyword is used to define anonymous function?",
+        "options": ["func", "lambda", "anon", "def"],
+        "answer": "lambda"
+    },
+    {
+        "question": "What is output of: bool(0)?",
+        "options": ["True", "False", "None", "Error"],
+        "answer": "False"
+    },
+    {
+        "question": "Which data structure uses key-value pairs?",
+        "options": ["List", "Tuple", "Dictionary", "Array"],
+        "answer": "Dictionary"
+    },
+    {
+        "question": "What is output of: print(2 == 2.0)?",
+        "options": ["True", "False", "Error", "None"],
+        "answer": "True"
+    },
+    {
+        "question": "Which of these is NOT OOP principle?",
+        "options": ["Encapsulation", "Inheritance", "Compilation", "Polymorphism"],
+        "answer": "Compilation"
+    },
+    {
+        "question": "Which function converts string to int?",
+        "options": ["int()", "str()", "float()", "chr()"],
+        "answer": "int()"
+    },
+    {
+        "question": "What is output of: print([1,2] + [3,4])?",
+        "options": ["[1,2,3,4]", "[1,2][3,4]", "Error", "[4,6]"],
+        "answer": "[1,2,3,4]"
+    },
+    {
+        "question": "Which protocol is used for web browsing?",
+        "options": ["FTP", "SMTP", "HTTP", "SSH"],
+        "answer": "HTTP"
+    },
+    {
+        "question": "Which is mutable?",
+        "options": ["tuple", "string", "list", "int"],
+        "answer": "list"
+    },
+    {
+        "question": "What is output of: print(10 % 3)?",
+        "options": ["1", "2", "3", "0"],
+        "answer": "1"
+    },
+    {
+        "question": "Which keyword is used to inherit a class in Python?",
+        "options": ["extend", "inherits", "class", "pass"],
+        "answer": "class"
+    },
+    {
+        "question": "Which of these is a NoSQL database?",
+        "options": ["MySQL", "MongoDB", "Oracle", "SQLite"],
+        "answer": "MongoDB"
+    },
+    {
+        "question": "What is output of: print(True + True)?",
+        "options": ["1", "2", "True", "Error"],
+        "answer": "2"
+    },
+    {
+        "question": "Which search algorithm is fastest on sorted data?",
+        "options": ["Linear Search", "Binary Search", "DFS", "BFS"],
+        "answer": "Binary Search"
+    },
+    {
+        "question": "Which keyword is used to define constant convention in Python?",
+        "options": ["const", "final", "None", "No keyword"],
+        "answer": "No keyword"
+    },
+
+    {
+        "question": "What is the output of: print(list(map(lambda x: x*x, [1,2,3])))?",
+        "options": ["[1, 4, 9]", "[1, 2, 3]", "[2, 4, 6]", "Error"],
+        "answer": "[1, 4, 9]"
+    },
+    {
+        "question": "What is the time complexity of inserting an element at the beginning of a Python list?",
+        "options": ["O(1)", "O(log n)", "O(n)", "O(n log n)"],
+        "answer": "O(n)"
+    },
+    {
+        "question": "What will be output of: print(bool('False'))?",
+        "options": ["True", "False", "None", "Error"],
+        "answer": "True"
+    },
+    {
+        "question": "Which data structure is best for implementing recursion?",
+        "options": ["Queue", "Stack", "Heap", "Graph"],
+        "answer": "Stack"
+    },
+    {
+        "question": "What is output of: print(0.1 + 0.2 == 0.3)?",
+        "options": ["True", "False", "Error", "None"],
+        "answer": "False"
+    },
+    {
+        "question": "What does Python's GIL stand for?",
         "options": [
-            "Central Process Unit",
-            "Central Processing Unit",
-            "Computer Personal Unit",
-            "Central Processor Utility"
+            "Global Interpreter Lock",
+            "General Internal Loop",
+            "Global Input Logic",
+            "Graph Iteration Lock"
         ],
-        "answer": "Central Processing Unit"
+        "answer": "Global Interpreter Lock"
+    },
+    {
+        "question": "Which of these is NOT a valid Python keyword?",
+        "options": ["pass", "eval", "lambda", "yield"],
+        "answer": "eval"
+    },
+    {
+        "question": "What is output of: print([i for i in range(3)])",
+        "options": ["[1,2,3]", "[0,1,2]", "[0,1,2,3]", "[1,2]"],
+        "answer": "[0,1,2]"
+    },
+    {
+        "question": "Which principle is violated if a subclass changes behavior of parent unexpectedly?",
+        "options": [
+            "Encapsulation",
+            "Liskov Substitution",
+            "Abstraction",
+            "Polymorphism"
+        ],
+        "answer": "Liskov Substitution"
+    },
+    {
+        "question": "What is output of: print(type(type(int)))?",
+        "options": ["type", "int", "object", "None"],
+        "answer": "type"
+    },
+    {
+        "question": "Which sorting algorithm is stable?",
+        "options": ["Quick Sort", "Heap Sort", "Merge Sort", "Selection Sort"],
+        "answer": "Merge Sort"
+    },
+    {
+        "question": "What is output of: print([[]]*3)?",
+        "options": ["[[],[],[]]", "[[[]],[[]],[[]]]", "Error", "None"],
+        "answer": "[[],[],[]]"
+    },
+    {
+        "question": "Which keyword is used for context management?",
+        "options": ["with", "using", "context", "manage"],
+        "answer": "with"
+    },
+    {
+        "question": "What is output of: print(id([]) == id([]))?",
+        "options": ["True", "False", "Error", "None"],
+        "answer": "False"
+    },
+    {
+        "question": "Which data structure is used in BFS?",
+        "options": ["Stack", "Queue", "Heap", "Tree"],
+        "answer": "Queue"
+    },
+    {
+        "question": "What is worst-case complexity of QuickSort?",
+        "options": ["O(n log n)", "O(n)", "O(n²)", "O(log n)"],
+        "answer": "O(n²)"
+    },
+    {
+        "question": "What is output of: print(10 > 5 > 1)?",
+        "options": ["True", "False", "Error", "None"],
+        "answer": "True"
+    },
+    {
+        "question": "Which method is called automatically in Python class creation?",
+        "options": ["__init__", "__new__", "__start__", "__create__"],
+        "answer": "__new__"
+    },
+    {
+        "question": "What is output of: print('abc' * 0)?",
+        "options": ["abc", "", "None", "Error"],
+        "answer": ""
+    },
+    {
+        "question": "Which of these is NOT a database index type?",
+        "options": ["B-Tree", "Hash Index", "Bitmap Index", "Linear Index"],
+        "answer": "Linear Index"
+    },
+    {
+        "question": "What is output of: print([1,2,3][::-1])?",
+        "options": ["[3,2,1]", "[1,2,3]", "Error", "[0,1,2]"],
+        "answer": "[3,2,1]"
+    },
+    {
+        "question": "Which traversal uses recursion naturally?",
+        "options": ["BFS", "DFS", "Level Order", "None"],
+        "answer": "DFS"
+    },
+    {
+        "question": "What is output of: print(True == 1 and False == 0)?",
+        "options": ["True", "False", "Error", "None"],
+        "answer": "True"
+    },
+    {
+        "question": "Which concept allows multiple functions with same name but different behavior?",
+        "options": ["Encapsulation", "Overloading", "Inheritance", "Abstraction"],
+        "answer": "Overloading"
+    },
+    {
+        "question": "What is output of: print(set([1,2,2,3]))?",
+        "options": ["[1,2,3]", "{1,2,3}", "(1,2,3)", "Error"],
+        "answer": "{1,2,3}"
+    },
+    {
+        "question": "Which language is NOT compiled?",
+        "options": ["C", "C++", "Python", "Rust"],
+        "answer": "Python"
+    },
+    {
+        "question": "What is output of: print(1 < 2 < 3 < 2)?",
+        "options": ["True", "False", "Error", "None"],
+        "answer": "False"
+    },
+    {
+        "question": "Which design pattern ensures only one instance exists?",
+        "options": ["Factory", "Singleton", "Builder", "Adapter"],
+        "answer": "Singleton"
+    },
+    {
+        "question": "What is output of: print(not [] and True)?",
+        "options": ["True", "False", "Error", "None"],
+        "answer": "True"
+    },
+    {
+        "question": "Which structure is best for priority scheduling?",
+        "options": ["Stack", "Queue", "Heap", "Array"],
+        "answer": "Heap"
     }
 ]

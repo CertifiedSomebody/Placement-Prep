@@ -10,15 +10,21 @@ class TimerManager:
         self.app = app
 
         self.update_label_callback = update_label_callback
+
         self.timeout_callback = timeout_callback
 
         self.time_left = 15
+
         self.timer_running = False
+
+        self.after_id = None
 
     # =========================================
     # Start Timer
     # =========================================
     def start_timer(self):
+
+        self.stop_timer()
 
         self.time_left = 15
 
@@ -32,6 +38,12 @@ class TimerManager:
     def stop_timer(self):
 
         self.timer_running = False
+
+        if self.after_id is not None:
+
+            self.app.after_cancel(self.after_id)
+
+            self.after_id = None
 
     # =========================================
     # Update Timer
@@ -49,7 +61,7 @@ class TimerManager:
 
             self.time_left -= 1
 
-            self.app.after(
+            self.after_id = self.app.after(
                 1000,
                 self.update_timer
             )

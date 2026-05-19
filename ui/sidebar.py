@@ -1,13 +1,13 @@
 import customtkinter as ctk
+from tkinter import messagebox
 
 
 class Sidebar(ctk.CTkFrame):
-
     def __init__(
         self,
         master,
-        dashboard_callback,
         home_callback,
+        dashboard_callback,
         history_callback,
         exit_callback
     ):
@@ -19,6 +19,20 @@ class Sidebar(ctk.CTkFrame):
         )
 
         self.pack_propagate(False)
+
+        # =========================================
+        # Exit Function
+        # =========================================
+        def confirm_exit():
+
+            confirm = messagebox.askyesno(
+                "Exit",
+                "Are you sure you want to exit?"
+            )
+
+            if confirm:
+
+                exit_callback()
 
         # =========================================
         # App Title
@@ -94,11 +108,12 @@ class Sidebar(ctk.CTkFrame):
             font=("Arial", 18),
             fg_color="darkred",
             hover_color="#5c0000",
-            command=exit_callback
+            command=confirm_exit
         )
 
         exit_button.pack(
+            side="bottom",
             fill="x",
             padx=20,
-            pady=(350, 10)
+            pady=20
         )

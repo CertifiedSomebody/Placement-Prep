@@ -1,55 +1,40 @@
-questions = {
+import json
 
-    "Aptitude": [
 
-        {
-            "question": "What is 5 + 7?",
-            "options": ["10", "11", "12", "13"],
-            "answer": "12"
-        },
+# =========================================
+# Load Questions From JSON
+# =========================================
+def load_questions():
 
-        {
-            "question": "What is 15 x 2?",
-            "options": ["20", "25", "30", "35"],
-            "answer": "30"
-        }
+    with open(
+        "data/questions/aptitude.json",
+        "r"
+    ) as file:
 
-    ],
+        aptitude_questions = json.load(file)
 
-    "Programming": [
+    with open(
+        "data/questions/programming.json",
+        "r"
+    ) as file:
 
-        {
-            "question": "Which language is used for Android development?",
-            "options": ["Python", "Kotlin", "Swift", "Ruby"],
-            "answer": "Kotlin"
-        },
+        programming_questions = json.load(file)
 
-        {
-            "question": "What does CPU stand for?",
-            "options": [
-                "Central Process Unit",
-                "Central Processing Unit",
-                "Computer Personal Unit",
-                "Core Processing Utility"
-            ],
-            "answer": "Central Processing Unit"
-        }
+    with open(
+        "data/questions/logical_reasoning.json",
+        "r"
+    ) as file:
 
-    ],
+        logical_questions = json.load(file)
 
-    "Logical Reasoning": [
+    return {
 
-        {
-            "question": "Find the odd one out.",
-            "options": ["Apple", "Banana", "Carrot", "Mango"],
-            "answer": "Carrot"
-        },
+        "Aptitude": aptitude_questions,
 
-        {
-            "question": "If ALL = 25, BALL = ?",
-            "options": ["27", "29", "31", "35"],
-            "answer": "27"
-        }
+        "Programming": programming_questions,
 
-    ]
-}
+        "Logical Reasoning": logical_questions
+    }
+
+
+questions = load_questions()

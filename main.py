@@ -132,6 +132,23 @@ def open_history():
         expand=True
     )
 
+# =========================================
+# Safe Exit
+# =========================================
+def close_app():
+
+    try:
+
+        quiz_screen.timer.stop_timer()
+
+    except:
+
+        pass
+
+    app.quit()
+
+    app.destroy()
+
 
 # =========================================
 # Sidebar
@@ -141,7 +158,7 @@ sidebar = Sidebar(
     show_home,
     show_dashboard,
     open_history,
-    app.destroy
+    close_app
 )
 
 sidebar.pack(
@@ -183,6 +200,10 @@ dashboard_screen = DashboardScreen(
     db
 )
 
+app.protocol(
+    "WM_DELETE_WINDOW",
+    close_app
+)
 
 # =========================================
 # Default Screen

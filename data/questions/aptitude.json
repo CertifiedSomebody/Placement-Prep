@@ -1,0 +1,23 @@
+[
+    {
+        "question": "What is 25% of 200?",
+        "options": [
+            "25",
+            "50",
+            "75",
+            "100"
+        ],
+        "answer": "50"
+    },
+
+    {
+        "question": "What is the square root of 144?",
+        "options": [
+            "10",
+            "11",
+            "12",
+            "13"
+        ],
+        "answer": "12"
+    }
+]

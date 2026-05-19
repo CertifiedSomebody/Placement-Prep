@@ -1,0 +1,23 @@
+[
+    {
+        "question": "Which language is used for Android Development?",
+        "options": [
+            "Python",
+            "Java",
+            "Swift",
+            "PHP"
+        ],
+        "answer": "Java"
+    },
+
+    {
+        "question": "What does CPU stand for?",
+        "options": [
+            "Central Process Unit",
+            "Central Processing Unit",
+            "Computer Personal Unit",
+            "Central Processor Utility"
+        ],
+        "answer": "Central Processing Unit"
+    }
+]

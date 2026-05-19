@@ -1,0 +1,23 @@
+[
+    {
+        "question": "Find the odd one out: Apple, Banana, Carrot, Mango",
+        "options": [
+            "Apple",
+            "Banana",
+            "Carrot",
+            "Mango"
+        ],
+        "answer": "Carrot"
+    },
+
+    {
+        "question": "If ALL = 25, BALL = ?",
+        "options": [
+            "27",
+            "26",
+            "29",
+            "30"
+        ],
+        "answer": "27"
+    }
+]

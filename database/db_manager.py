@@ -79,3 +79,49 @@ class DatabaseManager:
         """)
 
         return self.cursor.fetchall()
+    
+        # =========================================
+    # Total Quizzes Played
+    # =========================================
+    def get_total_quizzes(self):
+
+        self.cursor.execute("""
+            SELECT COUNT(*)
+            FROM quiz_history
+        """)
+
+        return self.cursor.fetchone()[0]
+
+    # =========================================
+    # Average Score
+    # =========================================
+    def get_average_score(self):
+
+        self.cursor.execute("""
+            SELECT AVG(score)
+            FROM quiz_history
+        """)
+
+        result = self.cursor.fetchone()[0]
+
+        if result is None:
+            return 0
+
+        return round(result, 2)
+
+    # =========================================
+    # Category Performance
+    # =========================================
+    def get_category_stats(self):
+
+        self.cursor.execute("""
+            SELECT
+                category,
+                COUNT(*)
+
+            FROM quiz_history
+
+            GROUP BY category
+        """)
+
+        return self.cursor.fetchall()

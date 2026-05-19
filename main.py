@@ -9,6 +9,7 @@ from ui.home_screen import HomeScreen
 from ui.quiz_screen import QuizScreen
 from ui.result_screen import ResultScreen
 from ui.history_screen import HistoryScreen
+from ui.dashboard_screen import DashboardScreen
 
 
 # =========================================
@@ -20,6 +21,7 @@ ctk.set_default_color_theme("blue")
 app = ctk.CTk()
 
 app.geometry("1200x700")
+
 app.title("PlacementPrep")
 
 app.resizable(False, False)
@@ -63,6 +65,18 @@ def show_home():
     clear_screens()
 
     home_screen.pack(
+        fill="both",
+        expand=True
+    )
+
+
+def show_dashboard():
+
+    clear_screens()
+
+    dashboard_screen.load_dashboard()
+
+    dashboard_screen.pack(
         fill="both",
         expand=True
     )
@@ -125,6 +139,7 @@ def open_history():
 sidebar = Sidebar(
     app,
     show_home,
+    show_dashboard,
     open_history,
     app.destroy
 )
@@ -161,6 +176,11 @@ history_screen = HistoryScreen(
     content_frame,
     db,
     show_home
+)
+
+dashboard_screen = DashboardScreen(
+    content_frame,
+    db
 )
 
 

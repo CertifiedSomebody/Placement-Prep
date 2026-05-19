@@ -6,6 +6,7 @@ class Sidebar(ctk.CTkFrame):
     def __init__(
         self,
         master,
+        dashboard_callback,
         home_callback,
         history_callback,
         exit_callback
@@ -44,6 +45,23 @@ class Sidebar(ctk.CTkFrame):
         )
 
         home_button.pack(
+            fill="x",
+            padx=20,
+            pady=10
+        )
+
+        # =========================================
+        # Dashboard Button
+        # =========================================
+        dashboard_button = ctk.CTkButton(
+            self,
+            text="Dashboard",
+            height=50,
+            font=("Arial", 18),
+            command=dashboard_callback
+        )
+
+        dashboard_button.pack(
             fill="x",
             padx=20,
             pady=10

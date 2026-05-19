@@ -3,7 +3,12 @@ import customtkinter as ctk
 
 class HomeScreen(ctk.CTkFrame):
 
-    def __init__(self, master, start_category_callback):
+    def __init__(
+        self,
+        master,
+        start_category_callback,
+        open_history_callback
+    ):
 
         super().__init__(master)
 
@@ -60,3 +65,19 @@ class HomeScreen(ctk.CTkFrame):
         )
 
         logical_button.pack(pady=15)
+
+        # =========================================
+        # History Button
+        # =========================================
+        history_button = ctk.CTkButton(
+            self,
+            text="View History",
+            width=250,
+            height=50,
+            font=("Arial", 18),
+            command=open_history_callback
+        )
+
+        history_button.pack(
+            pady=(30, 10)
+        )

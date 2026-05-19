@@ -2,10 +2,12 @@ import customtkinter as ctk
 
 from logic.quiz_manager import QuizManager
 
+from database.db_manager import DatabaseManager
+
 from ui.home_screen import HomeScreen
 from ui.quiz_screen import QuizScreen
 from ui.result_screen import ResultScreen
-from database.db_manager import DatabaseManager
+from ui.history_screen import HistoryScreen
 
 
 # =========================================
@@ -22,10 +24,12 @@ app.resizable(False, False)
 
 
 # =========================================
-# Quiz Manager
+# Managers
 # =========================================
 quiz = QuizManager()
+
 db = DatabaseManager()
+
 
 # =========================================
 # Functions
@@ -61,6 +65,7 @@ def show_result():
         expand=True
     )
 
+
 def restart_quiz():
 
     quiz.restart_quiz()
@@ -73,12 +78,35 @@ def restart_quiz():
     )
 
 
+def open_history():
+
+    home_screen.pack_forget()
+
+    history_screen.load_history()
+
+    history_screen.pack(
+        fill="both",
+        expand=True
+    )
+
+
+def close_history():
+
+    history_screen.pack_forget()
+
+    home_screen.pack(
+        fill="both",
+        expand=True
+    )
+
+
 # =========================================
 # Screens
 # =========================================
 home_screen = HomeScreen(
     app,
-    start_category
+    start_category,
+    open_history
 )
 
 quiz_screen = QuizScreen(
@@ -92,6 +120,12 @@ result_screen = ResultScreen(
     app,
     quiz,
     restart_quiz
+)
+
+history_screen = HistoryScreen(
+    app,
+    db,
+    close_history
 )
 
 

@@ -4,6 +4,7 @@ from logic.quiz_manager import QuizManager
 
 from database.db_manager import DatabaseManager
 
+from ui.sidebar import Sidebar
 from ui.home_screen import HomeScreen
 from ui.quiz_screen import QuizScreen
 from ui.result_screen import ResultScreen
@@ -18,8 +19,9 @@ ctk.set_default_color_theme("blue")
 
 app = ctk.CTk()
 
-app.geometry("900x600")
+app.geometry("1200x700")
 app.title("PlacementPrep")
+
 app.resizable(False, False)
 
 
@@ -32,13 +34,45 @@ db = DatabaseManager()
 
 
 # =========================================
-# Functions
+# Main Content Frame
 # =========================================
+content_frame = ctk.CTkFrame(
+    app,
+    corner_radius=0
+)
+
+content_frame.pack(
+    side="right",
+    fill="both",
+    expand=True
+)
+
+
+# =========================================
+# Screen Functions
+# =========================================
+def clear_screens():
+
+    for widget in content_frame.winfo_children():
+
+        widget.pack_forget()
+
+
+def show_home():
+
+    clear_screens()
+
+    home_screen.pack(
+        fill="both",
+        expand=True
+    )
+
+
 def start_category(category_name):
 
     quiz.load_category(category_name)
 
-    home_screen.pack_forget()
+    clear_screens()
 
     quiz_screen.pack(
         fill="both",
@@ -50,13 +84,13 @@ def start_category(category_name):
 
 def show_result():
 
-    quiz_screen.pack_forget()
-
     db.save_result(
         quiz.current_category,
         quiz.get_score(),
         quiz.total_questions()
     )
+
+    clear_screens()
 
     result_screen.update_score()
 
@@ -70,17 +104,12 @@ def restart_quiz():
 
     quiz.restart_quiz()
 
-    result_screen.pack_forget()
-
-    home_screen.pack(
-        fill="both",
-        expand=True
-    )
+    show_home()
 
 
 def open_history():
 
-    home_screen.pack_forget()
+    clear_screens()
 
     history_screen.load_history()
 
@@ -90,43 +119,55 @@ def open_history():
     )
 
 
-def close_history():
+# =========================================
+# Sidebar
+# =========================================
+sidebar = Sidebar(
+    app,
+    show_home,
+    open_history,
+    app.destroy
+)
 
-    history_screen.pack_forget()
-
-    home_screen.pack(
-        fill="both",
-        expand=True
-    )
+sidebar.pack(
+    side="left",
+    fill="y"
+)
 
 
 # =========================================
 # Screens
 # =========================================
 home_screen = HomeScreen(
-    app,
+    content_frame,
     start_category,
     open_history
 )
 
 quiz_screen = QuizScreen(
-    app,
+    content_frame,
     app,
     quiz,
     show_result
 )
 
 result_screen = ResultScreen(
-    app,
+    content_frame,
     quiz,
     restart_quiz
 )
 
 history_screen = HistoryScreen(
-    app,
+    content_frame,
     db,
-    close_history
+    show_home
 )
+
+
+# =========================================
+# Default Screen
+# =========================================
+show_home()
 
 
 # =========================================

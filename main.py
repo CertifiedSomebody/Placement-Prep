@@ -77,6 +77,7 @@ home_screen = HomeScreen(
 
 quiz_screen = QuizScreen(
     app,
+    app,
     quiz,
     show_result
 )

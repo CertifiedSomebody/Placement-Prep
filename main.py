@@ -1,5 +1,5 @@
 import customtkinter as ctk
-from questions import questions
+from quiz_manager import QuizManager
 
 
 # =========================================
@@ -9,16 +9,16 @@ ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("blue")
 
 app = ctk.CTk()
+
 app.geometry("900x600")
 app.title("PlacementPrep")
 app.resizable(False, False)
 
 
 # =========================================
-# Quiz Variables
+# Quiz Manager
 # =========================================
-current_question = 0
-score = 0
+quiz = QuizManager()
 
 
 # =========================================
@@ -38,13 +38,14 @@ def start_quiz():
 
 def load_question():
 
-    question_data = questions[current_question]
+    question_data = quiz.get_question()
 
     question_label.configure(
         text=question_data["question"]
     )
 
     for i, option in enumerate(question_data["options"]):
+
         option_buttons[i].configure(
             text=option
         )
@@ -52,20 +53,14 @@ def load_question():
 
 def check_answer(selected_option):
 
-    global current_question
-    global score
+    quiz.check_answer(selected_option)
 
-    correct_answer = questions[current_question]["answer"]
+    if quiz.has_questions_left():
 
-    if selected_option == correct_answer:
-        score += 1
-
-    current_question += 1
-
-    if current_question < len(questions):
         load_question()
 
     else:
+
         show_result()
 
 
@@ -74,7 +69,7 @@ def show_result():
     quiz_frame.pack_forget()
 
     result_label.configure(
-        text=f"Your Score: {score}/{len(questions)}"
+        text=f"Your Score: {quiz.get_score()}/{quiz.total_questions()}"
     )
 
     result_frame.pack(
@@ -85,11 +80,7 @@ def show_result():
 
 def restart_quiz():
 
-    global current_question
-    global score
-
-    current_question = 0
-    score = 0
+    quiz.restart_quiz()
 
     result_frame.pack_forget()
 
@@ -110,32 +101,64 @@ title_label = ctk.CTkLabel(
     font=("Arial", 40, "bold")
 )
 
-title_label.pack(pady=80)
+title_label.pack(pady=50)
 
 subtitle_label = ctk.CTkLabel(
     home_frame,
-    text="Train for Placements Efficiently",
+    text="Choose a Quiz Category",
     font=("Arial", 20)
 )
 
 subtitle_label.pack(pady=10)
 
-start_button = ctk.CTkButton(
+
+def start_category(category_name):
+
+    quiz.load_category(category_name)
+
+    start_quiz()
+
+
+aptitude_button = ctk.CTkButton(
     home_frame,
-    text="Start Quiz",
-    width=220,
+    text="Aptitude",
+    width=250,
     height=55,
-    font=("Arial", 20, "bold"),
-    command=start_quiz
+    font=("Arial", 18, "bold"),
+    command=lambda: start_category("Aptitude")
 )
 
-start_button.pack(pady=50)
+aptitude_button.pack(pady=15)
+
+
+programming_button = ctk.CTkButton(
+    home_frame,
+    text="Programming",
+    width=250,
+    height=55,
+    font=("Arial", 18, "bold"),
+    command=lambda: start_category("Programming")
+)
+
+programming_button.pack(pady=15)
+
+
+logical_button = ctk.CTkButton(
+    home_frame,
+    text="Logical Reasoning",
+    width=250,
+    height=55,
+    font=("Arial", 18, "bold"),
+    command=lambda: start_category("Logical Reasoning")
+)
+
+logical_button.pack(pady=15)
+
 
 home_frame.pack(
     fill="both",
     expand=True
 )
-
 
 # =========================================
 # Quiz Frame

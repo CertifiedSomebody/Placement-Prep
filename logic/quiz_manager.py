@@ -1,4 +1,4 @@
-from questions import questions
+from data.questions import questions
 
 
 class QuizManager:
@@ -40,7 +40,7 @@ class QuizManager:
     def total_questions(self):
 
         return len(self.questions)
-    
+
     def restart_quiz(self):
 
         self.current_question = 0

@@ -5,6 +5,7 @@ from logic.quiz_manager import QuizManager
 from ui.home_screen import HomeScreen
 from ui.quiz_screen import QuizScreen
 from ui.result_screen import ResultScreen
+from database.db_manager import DatabaseManager
 
 
 # =========================================
@@ -24,7 +25,7 @@ app.resizable(False, False)
 # Quiz Manager
 # =========================================
 quiz = QuizManager()
-
+db = DatabaseManager()
 
 # =========================================
 # Functions
@@ -47,13 +48,18 @@ def show_result():
 
     quiz_screen.pack_forget()
 
+    db.save_result(
+        quiz.current_category,
+        quiz.get_score(),
+        quiz.total_questions()
+    )
+
     result_screen.update_score()
 
     result_screen.pack(
         fill="both",
         expand=True
     )
-
 
 def restart_quiz():
 

@@ -1,7 +1,6 @@
 import customtkinter as ctk
 
 from logic.quiz_manager import QuizManager
-
 from database.db_manager import DatabaseManager
 
 from ui.sidebar import Sidebar
@@ -36,7 +35,7 @@ db = DatabaseManager()
 
 
 # =========================================
-# Main Content Frame
+# Main Content Area
 # =========================================
 content_frame = ctk.CTkFrame(
     app,
@@ -51,7 +50,7 @@ content_frame.pack(
 
 
 # =========================================
-# Screen Functions
+# Utility Functions
 # =========================================
 def clear_screens():
 
@@ -60,38 +59,46 @@ def clear_screens():
         widget.pack_forget()
 
 
-def show_home():
+def show_screen(screen):
 
     clear_screens()
 
-    home_screen.pack(
+    screen.pack(
         fill="both",
         expand=True
     )
+
+
+# =========================================
+# Navigation Functions
+# =========================================
+def show_home():
+
+    show_screen(home_screen)
 
 
 def show_dashboard():
 
-    clear_screens()
-
     dashboard_screen.load_dashboard()
 
-    dashboard_screen.pack(
-        fill="both",
-        expand=True
-    )
+    show_screen(dashboard_screen)
 
 
+def open_history():
+
+    history_screen.load_history()
+
+    show_screen(history_screen)
+
+
+# =========================================
+# Quiz Flow
+# =========================================
 def start_category(category_name):
 
     quiz.load_category(category_name)
 
-    clear_screens()
-
-    quiz_screen.pack(
-        fill="both",
-        expand=True
-    )
+    show_screen(quiz_screen)
 
     quiz_screen.load_question()
 
@@ -104,14 +111,9 @@ def show_result():
         quiz.total_questions()
     )
 
-    clear_screens()
-
     result_screen.update_score()
 
-    result_screen.pack(
-        fill="both",
-        expand=True
-    )
+    show_screen(result_screen)
 
 
 def restart_quiz():
@@ -121,17 +123,6 @@ def restart_quiz():
     show_home()
 
 
-def open_history():
-
-    clear_screens()
-
-    history_screen.load_history()
-
-    history_screen.pack(
-        fill="both",
-        expand=True
-    )
-
 # =========================================
 # Safe Exit
 # =========================================
@@ -139,9 +130,19 @@ def close_app():
 
     try:
 
-        quiz_screen.timer.stop_timer()
+        if hasattr(quiz_screen, "timer"):
 
-    except:
+            quiz_screen.timer.stop_timer()
+
+    except Exception:
+
+        pass
+
+    try:
+
+        db.connection.close()
+
+    except Exception:
 
         pass
 
@@ -200,10 +201,15 @@ dashboard_screen = DashboardScreen(
     db
 )
 
+
+# =========================================
+# Window Close Protocol
+# =========================================
 app.protocol(
     "WM_DELETE_WINDOW",
     close_app
 )
+
 
 # =========================================
 # Default Screen
@@ -212,6 +218,6 @@ show_home()
 
 
 # =========================================
-# Run App
+# Run Application
 # =========================================
 app.mainloop()

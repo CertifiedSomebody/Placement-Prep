@@ -42,7 +42,7 @@ class HistoryScreen(ctk.CTkFrame):
         )
 
         # =========================================
-        # Scrollable History Frame
+        # Scrollable Frame
         # =========================================
         self.history_frame = ctk.CTkScrollableFrame(
             self,
@@ -76,16 +76,12 @@ class HistoryScreen(ctk.CTkFrame):
     # =========================================
     def load_history(self):
 
-        # Clear old widgets
         for widget in self.history_frame.winfo_children():
 
             widget.destroy()
 
         history = self.db.get_history()
 
-        # =========================================
-        # No History
-        # =========================================
         if not history:
 
             empty_label = ctk.CTkLabel(
@@ -94,22 +90,32 @@ class HistoryScreen(ctk.CTkFrame):
                 font=("Arial", 20)
             )
 
-            empty_label.pack(
-                pady=30
-            )
+            empty_label.pack(pady=30)
 
             return
 
-        # =========================================
-        # History Cards
-        # =========================================
         for item in history:
 
             category, score, total, percentage, played_at = item
 
+            # =========================================
+            # SAFE FIX (CRITICAL)
+            # =========================================
+            if percentage is None:
+
+                if total and total > 0:
+
+                    percentage = round((score / total) * 100, 2)
+
+                else:
+
+                    percentage = 0
+
+            # Final safety
+            percentage = float(percentage)
 
             # =========================================
-            # Card Color Logic
+            # Color Logic
             # =========================================
             if percentage >= 80:
 
@@ -124,7 +130,7 @@ class HistoryScreen(ctk.CTkFrame):
                 score_color = "red"
 
             # =========================================
-            # Card Frame
+            # Card UI
             # =========================================
             card = ctk.CTkFrame(
                 self.history_frame,
@@ -137,9 +143,6 @@ class HistoryScreen(ctk.CTkFrame):
                 pady=10
             )
 
-            # =========================================
-            # Category
-            # =========================================
             category_label = ctk.CTkLabel(
                 card,
                 text=f"📘 {category}",
@@ -152,9 +155,6 @@ class HistoryScreen(ctk.CTkFrame):
                 pady=(15, 5)
             )
 
-            # =========================================
-            # Score
-            # =========================================
             score_label = ctk.CTkLabel(
                 card,
                 text=f"Score: {score}/{total} ({percentage}%)",
@@ -168,9 +168,6 @@ class HistoryScreen(ctk.CTkFrame):
                 pady=5
             )
 
-            # =========================================
-            # Timestamp
-            # =========================================
             date_label = ctk.CTkLabel(
                 card,
                 text=f"Played At: {played_at}",

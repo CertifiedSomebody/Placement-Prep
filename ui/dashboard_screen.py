@@ -23,40 +23,163 @@ class DashboardScreen(ctk.CTkFrame):
         title_label = ctk.CTkLabel(
             self,
             text="Analytics Dashboard",
-            font=("Arial", 36, "bold")
+            font=("Arial", 38, "bold")
         )
 
-        title_label.pack(pady=20)
+        title_label.pack(
+            pady=(20, 10)
+        )
 
         # =========================================
-        # Stats Labels
+        # Subtitle
         # =========================================
-        self.total_label = ctk.CTkLabel(
+        subtitle_label = ctk.CTkLabel(
             self,
-            text="",
-            font=("Arial", 22)
+            text="Track your placement preparation progress",
+            font=("Arial", 18),
+            text_color="gray"
         )
 
-        self.total_label.pack(pady=10)
+        subtitle_label.pack(
+            pady=(0, 20)
+        )
+
+        # =========================================
+        # Stats Frame
+        # =========================================
+        self.stats_frame = ctk.CTkFrame(
+            self,
+            fg_color="transparent"
+        )
+
+        self.stats_frame.pack(
+            pady=10
+        )
+
+        # =========================================
+        # Total Quizzes Card
+        # =========================================
+        self.total_card = ctk.CTkFrame(
+            self.stats_frame,
+            width=250,
+            height=120,
+            corner_radius=20
+        )
+
+        self.total_card.grid(
+            row=0,
+            column=0,
+            padx=20
+        )
+
+        self.total_card.grid_propagate(False)
+
+        total_title = ctk.CTkLabel(
+            self.total_card,
+            text="Total Quizzes",
+            font=("Arial", 20, "bold")
+        )
+
+        total_title.pack(
+            pady=(20, 5)
+        )
+
+        self.total_label = ctk.CTkLabel(
+            self.total_card,
+            text="0",
+            font=("Arial", 34, "bold"),
+            text_color="lightgreen"
+        )
+
+        self.total_label.pack()
+
+        # =========================================
+        # Average Score Card
+        # =========================================
+        self.average_card = ctk.CTkFrame(
+            self.stats_frame,
+            width=250,
+            height=120,
+            corner_radius=20
+        )
+
+        self.average_card.grid(
+            row=0,
+            column=1,
+            padx=20
+        )
+
+        self.average_card.grid_propagate(False)
+
+        average_title = ctk.CTkLabel(
+            self.average_card,
+            text="Average Score",
+            font=("Arial", 20, "bold")
+        )
+
+        average_title.pack(
+            pady=(20, 5)
+        )
 
         self.average_label = ctk.CTkLabel(
-            self,
-            text="",
-            font=("Arial", 22)
+            self.average_card,
+            text="0%",
+            font=("Arial", 34, "bold"),
+            text_color="orange"
         )
 
-        self.average_label.pack(pady=10)
+        self.average_label.pack()
+
+        # =========================================
+        # Best Category Card
+        # =========================================
+        self.best_card = ctk.CTkFrame(
+            self.stats_frame,
+            width=250,
+            height=120,
+            corner_radius=20
+        )
+
+        self.best_card.grid(
+            row=0,
+            column=2,
+            padx=20
+        )
+
+        self.best_card.grid_propagate(False)
+
+        best_title = ctk.CTkLabel(
+            self.best_card,
+            text="Best Category",
+            font=("Arial", 20, "bold")
+        )
+
+        best_title.pack(
+            pady=(20, 5)
+        )
+
+        self.best_label = ctk.CTkLabel(
+            self.best_card,
+            text="-",
+            font=("Arial", 26, "bold"),
+            text_color="skyblue"
+        )
+
+        self.best_label.pack()
 
         # =========================================
         # Graph Frame
         # =========================================
-        self.graph_frame = ctk.CTkFrame(self)
+        self.graph_frame = ctk.CTkFrame(
+            self,
+            corner_radius=20
+        )
 
         self.graph_frame.pack(
             fill="both",
             expand=True,
-            padx=20,
-            pady=20
+            padx=30,
+            pady=30
         )
 
     # =========================================
@@ -68,12 +191,32 @@ class DashboardScreen(ctk.CTkFrame):
 
         average_score = self.db.get_average_score()
 
+        stats = self.db.get_category_stats()
+
         self.total_label.configure(
-            text=f"Total Quizzes Played: {total_quizzes}"
+            text=str(total_quizzes)
         )
 
         self.average_label.configure(
-            text=f"Average Score: {average_score}"
+            text=f"{average_score}%"
+        )
+
+        # =========================================
+        # Best Category
+        # =========================================
+        if stats:
+
+            best_category = max(
+                stats,
+                key=lambda item: item[1]
+            )[0]
+
+        else:
+
+            best_category = "-"
+
+        self.best_label.configure(
+            text=best_category
         )
 
         self.load_graph()
@@ -89,20 +232,69 @@ class DashboardScreen(ctk.CTkFrame):
 
         stats = self.db.get_category_stats()
 
+        if not stats:
+
+            empty_label = ctk.CTkLabel(
+                self.graph_frame,
+                text="No analytics data available yet.",
+                font=("Arial", 22)
+            )
+
+            empty_label.pack(
+                pady=50
+            )
+
+            return
+
         categories = [item[0] for item in stats]
 
         counts = [item[1] for item in stats]
 
-        fig, ax = plt.subplots(figsize=(6, 4))
+        # =========================================
+        # Matplotlib Figure
+        # =========================================
+        fig, ax = plt.subplots(
+            figsize=(7, 4)
+        )
 
-        ax.bar(categories, counts)
+        fig.patch.set_facecolor("#2b2b2b")
 
-        ax.set_title("Quiz Attempts Per Category")
+        ax.set_facecolor("#2b2b2b")
 
-        ax.set_xlabel("Category")
+        ax.bar(
+            categories,
+            counts
+        )
 
-        ax.set_ylabel("Attempts")
+        ax.set_title(
+            "Quiz Attempts Per Category",
+            color="white",
+            fontsize=16
+        )
 
+        ax.set_xlabel(
+            "Category",
+            color="white"
+        )
+
+        ax.set_ylabel(
+            "Attempts",
+            color="white"
+        )
+
+        ax.tick_params(
+            axis="x",
+            colors="white"
+        )
+
+        ax.tick_params(
+            axis="y",
+            colors="white"
+        )
+
+        # =========================================
+        # Embed Graph
+        # =========================================
         canvas = FigureCanvasTkAgg(
             fig,
             master=self.graph_frame
@@ -112,5 +304,7 @@ class DashboardScreen(ctk.CTkFrame):
 
         canvas.get_tk_widget().pack(
             fill="both",
-            expand=True
+            expand=True,
+            padx=20,
+            pady=20
         )

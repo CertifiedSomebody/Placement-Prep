@@ -38,13 +38,21 @@ class QuizManager:
     # =========================================
     def check_answer(self, selected_option):
 
-        correct_answer = self.questions[self.current_question]["answer"]
+        correct_answer = self.questions[
+            self.current_question
+        ]["answer"]
 
-        if selected_option == correct_answer:
+        is_correct = (
+            selected_option == correct_answer
+        )
+
+        if is_correct:
 
             self.score += 1
 
         self.current_question += 1
+
+        return is_correct
 
     # =========================================
     # Questions Left

@@ -51,6 +51,19 @@ class QuizScreen(ctk.CTkFrame):
         )
 
         self.timer_label.pack(
+            pady=(0, 10)
+        )
+
+        # =========================================
+        # Feedback Label
+        # =========================================
+        self.feedback_label = ctk.CTkLabel(
+            self,
+            text="",
+            font=("Arial", 22, "bold")
+        )
+
+        self.feedback_label.pack(
             pady=(0, 20)
         )
 
@@ -65,7 +78,7 @@ class QuizScreen(ctk.CTkFrame):
         )
 
         self.question_label.pack(
-            pady=50
+            pady=30
         )
 
         # =========================================
@@ -97,6 +110,10 @@ class QuizScreen(ctk.CTkFrame):
 
         question_data = self.quiz.get_question()
 
+        self.feedback_label.configure(
+            text=""
+        )
+
         self.progress_label.configure(
             text=f"Question {self.quiz.current_question + 1} / {self.quiz.total_questions()}"
         )
@@ -108,7 +125,8 @@ class QuizScreen(ctk.CTkFrame):
         for i, option in enumerate(question_data["options"]):
 
             self.option_buttons[i].configure(
-                text=option
+                text=option,
+                state="normal"
             )
 
         self.timer.start_timer()
@@ -120,7 +138,48 @@ class QuizScreen(ctk.CTkFrame):
 
         self.timer.stop_timer()
 
-        self.quiz.check_answer(selected_option)
+        # Disable buttons temporarily
+        for button in self.option_buttons:
+
+            button.configure(
+                state="disabled"
+            )
+
+        correct_answer = self.quiz.get_question()["answer"]
+
+        is_correct = self.quiz.check_answer(
+            selected_option
+        )
+
+        # =========================================
+        # Show Feedback
+        # =========================================
+        if is_correct:
+
+            self.feedback_label.configure(
+                text="✅ Correct!",
+                text_color="lightgreen"
+            )
+
+        else:
+
+            self.feedback_label.configure(
+                text=f"❌ Incorrect! Correct Answer: {correct_answer}",
+                text_color="red"
+            )
+
+        # =========================================
+        # Wait Before Next Question
+        # =========================================
+        self.after(
+            1500,
+            self.next_question
+        )
+
+    # =========================================
+    # Next Question
+    # =========================================
+    def next_question(self):
 
         if self.quiz.has_questions_left():
 
